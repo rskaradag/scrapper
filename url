@@ -1,0 +1,16 @@
+curl 'httpsgandalf.segmentify.comaddeventsv1.jsonapiKey=7a149359-e360-4669-aa11-a2d8a9ecf0a6' 
+  -H 'Connection keep-alive' 
+  -H 'Accept ' 
+  -H 'X-Sfy-Api-Key 7a149359-e360-4669-aa11-a2d8a9ecf0a6' 
+  -H 'User-Agent Mozilla5.0 (Windows NT 10.0; Win64; x64) AppleWebKit537.36 (KHTML, like Gecko) Chrome86.0.4240.111 Safari537.36' 
+  -H 'Content-Type textplain' 
+  -H 'Origin httpswww.watsons.com.tr' 
+  -H 'Sec-Fetch-Site cross-site' 
+  -H 'Sec-Fetch-Mode cors' 
+  -H 'Sec-Fetch-Dest empty' 
+  -H 'Referer httpswww.watsons.com.tr' 
+  -H 'Accept-Language tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7' 
+  --data-binary '[{namePAGE_VIEW,userId2380481611291172865,sessionId5803218599639605248,testModefalse,devicePC,noProcessfalse,tryCount0,nextPagefalse,params{gender__ANY__},recommendIds[]
+,referrer,pageUrl,browserChrome,osWindows,osversion10,userAgentMozilla5.0 (Windows NT 10.0; Win64; x64) AppleWebKit537.36 (KHTML, like Gecko) Chrome86.0.4240.111 Safari537.36,langTR,currency
+,region,asynctrue,email,ft2020.10.30 134444.571,tz-180,categoryCategory Page,subCategoryMakyaj}]' 
+  --compressed  response1
