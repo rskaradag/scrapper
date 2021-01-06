@@ -6,6 +6,7 @@ import decimal
 import subprocess, sys,os
 from datetime import date
 from bs4 import BeautifulSoup
+from time import sleep
 
 import email, smtplib, ssl
 
@@ -84,12 +85,13 @@ def fetch_gratis():
 	for i in range(100,3300,100):
 
 		print(str(i))
+		sleep(3)
 		response = requests.get('https://www.gratis.com/ccstoreui/v1/search?N=3790920594&Nrpp=100&No='+str(i-100)+'&Nr=AND(product.active%3A1%2CNOT(sku.listPrice%3A0.000000))&Ns=')
 		data=json.loads(response.content)
 
 		for product in data["resultsList"]["records"]:
+			r= requests.get('https://www.gratis.com/ccstoreui/v1/products?fields=id%2ClistPrices%2CchildSKUs.repositoryId%2CchildSKUs.listPrices&productIds=' + str(product["records"][0]["attributes"]["product.id"][0]))
 			if "sku.grm_Campaignsearch" in product["records"][0]["attributes"]:
-				r= requests.get('https://www.gratis.com/ccstoreui/v1/products?fields=id%2ClistPrices%2CchildSKUs.repositoryId%2CchildSKUs.listPrices&productIds=' + str(product["records"][0]["attributes"]["product.id"][0]))
 				r.encoding
 				d_product = json.loads(r.content)
 				line.append(str(product["records"][0]["attributes"]["sku.grm_DynamicSearchText3"][0]) if "sku.grm_DynamicSearchText3" in product["records"][0]["attributes"] else "")
@@ -173,7 +175,7 @@ def send_email():
 
 def main():
 	print("hello")
-	fetch_watsons()
+	#fetch_watsons()
 	fetch_gratis()
 	send_email()
 
